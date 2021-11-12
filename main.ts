@@ -3,20 +3,20 @@ input.onButtonPressed(Button.A, function () {
     if (UserX < 0) {
         UserX = 0
     }
-    basic.pause(500)
+    basic.pause(100)
 })
 input.onButtonPressed(Button.B, function () {
     UserX = UserX + 1
     if (UserX > 3) {
         UserX = 3
     }
-    basic.pause(200)
+    basic.pause(100)
 })
 let McuX = 0
 let UserX = 0
 let BallY = 3
 let BallX = 1
-basic.showString("Pong")
+basic.showString("Pong1")
 UserX = 2
 let BallDirX = 1
 let BallDirY = 1
@@ -71,5 +71,5 @@ basic.forever(function () {
             McuX = 3
         }
     }
-    basic.pause(550)
+    basic.pause(500)
 })
