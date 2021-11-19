@@ -27,7 +27,7 @@ basic.forever(function () {
     led.plot(McuX, 0)
     led.plot(McuX + 1, 0)
     led.plot(BallX, BallY)
-    basic.pause(200)
+    basic.pause(100)
     BallX = BallX + BallDirX
     BallY = BallY + BallDirY
     if (BallX > 3 || BallX < 1) {
@@ -63,7 +63,14 @@ basic.forever(function () {
 })
 basic.forever(function () {
     if (BallDirY < 0) {
-        McuX = McuX + BallDirX
+        if ((McuX != (BallX + BallDirX)) || (((McuX + 1) != (BallX + BallDirX))))
+        {
+            if ((McuX - (BallX + BallDirX))<0)
+                McuX = McuX + 1
+            else if ((McuX - (BallX + BallDirX)) > 0)
+                McuX = McuX - 1
+        }
+
         if (McuX < 0) {
             McuX = 0
         }
@@ -71,5 +78,5 @@ basic.forever(function () {
             McuX = 3
         }
     }
-    basic.pause(500)
+    basic.pause(200)
 })
